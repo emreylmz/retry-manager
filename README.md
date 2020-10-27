@@ -15,7 +15,7 @@ retryManager := redisCache.NewRetryManager(errors, 5 * time.Second,5,logger);
 //use retry-manager your error cases etc.
 retry := manager.RetryHandler {
     Execute: func() error {
-        return errors.New("sadasdsa") // service.SetTicketToCache(request);
+        return service.SetTicketToCache(request); //your logic
     },
     RetryErrorLog: fmt.Sprintf("Key : %s",key),
 }
